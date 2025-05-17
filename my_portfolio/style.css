@@ -1,0 +1,100 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+}
+
+.logo-text h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #C7C7C7;
+    letter-spacing: -1px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+.nav-list a {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #C7C7C7;
+}
+
+/* Main Content */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-content {
+    max-width: 544px;
+    max-height: 360px;
+    width: auto;
+    height: auto;
+}
+
+.hero-content h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: #C7C7C7;
+    padding-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-button {
+   background-color: #0084FF;
+   color: #0A0A0A;
+   width: 187px;
+   height: 54px;
+   border: none;
+   border-radius: 32px;
+   font-family: 'Manrope', sans-serif;
+   font-size: 16px;
+   font-weight: 550;
+}
+
+.linkedin-button {
+    background-color: #222222;
+    border: none;
+    width: 54px;
+    height: 54px;
+    border-radius: 64px;
+}
+
+.github-button {
+    background-color: #222222;
+    border: none;
+    width: 54px;
+    height: 54px;
+    border-radius: 64px;
+}
+
+.hero-image img {
+    max-width: 600px;
+    max-height: 663px;
+    width: auto;
+    height: auto;
+}
