@@ -200,3 +200,90 @@ hr.solid-divider {
     text-decoration: none;
     color: #0084FF;
 }
+
+/* About me Section */
+
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    gap: 213px;
+    padding-top: 122px;
+} 
+
+.about-me-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 101px;
+    font-weight: normal;
+}
+
+.about-me-content {
+    max-width: 700px;
+    max-height: 360px;
+}
+
+.about-me-content h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 32px;
+    padding-bottom: 16px;
+    font-weight: normal;
+}
+
+.about-me-content p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: #C7C7C7;
+    padding-bottom: 53px;
+}
+
+.about-me-content button {
+    background-color: #0A0A0A;
+    display: inline-block;
+    height: 24px;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    padding: 0;
+    border-bottom: 2px solid #0084FF;
+    padding-bottom: 4px;
+}
+
+.about-me-content a {
+    text-decoration: none;
+    color: #0084FF;
+}
+
+/* Contact Section */
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.contact-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 76px;
+    font-weight: normal;
+    padding-bottom: 16px;
+}
+
+.contact-header p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: #C7C7C7;
+    padding-bottom: 8px;
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+    padding-top: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 24px;
+}
