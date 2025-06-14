@@ -7,13 +7,23 @@
     padding: 30px 60px;
 }
 
+@media(max-width: 480px) {
+    .navbar {
+        padding: 30px 30px;
+        max-width: 100%;
+    }
+    .navbar .nav-list {
+        display: none;
+        justify-content: space-between;
+    }
+}
+
 .logo-text h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 32px;
     color: #C7C7C7;
     font-weight: normal;
 }
-
 .nav-list {
     display: flex;
     gap: 32px;
@@ -26,11 +36,31 @@
     color: #C7C7C7;
 }
 
+.burger-icon {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .navbar .burger-icon {
+        display: block;
+        margin: 0;
+    }
+}
+
 /* Main Content */
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 16px;
+        gap: 48px;
+        max-width: 100%;
+        text-align: center;
+    }
 }
 
 .hero {
@@ -40,11 +70,24 @@
     gap: 80px;
 }
 
+@media (max-width: 480px) {
+    .hero {
+        flex-direction: column;
+        max-width: 100%;
+    }
+}
+
 .hero-content {
     max-width: 544px;
     max-height: 360px;
     width: auto;
     height: auto;
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding-left: 10px;
+    }
 }
 
 .hero-content h1 {
@@ -54,12 +97,14 @@
     font-weight: normal;
 }
 
+
 .hero-content p {
     font-family: 'Manrope', sans-serif;
     font-size: 18px;
     color: #C7C7C7;
     padding-bottom: 40px;
 }
+
 
 .hero-buttons {
     display: flex;
@@ -94,6 +139,12 @@
     border-radius: 64px;
 }
 
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 50px;
+    }
+}
+
 .hero-image img {
     max-width: 600px;
     max-height: 663px;
@@ -101,12 +152,22 @@
     height: auto;
 }
 
+@media (max-width: 480px) {
+    .hero-image {
+        padding: 0;
+        max-width: 100%;
+    }
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 /* Projects Section */
 
 .projects-header {
-    max-width: 600px;
-    max-height: 138px;
-    padding: 80px 60px;
+    max-width: 100%;
+    max-height: 100%;
     align-self: flex-start;
 }
 
@@ -136,11 +197,38 @@
     gap: 48px;
 }
 
+@media (max-width: 480px) {
+    .projects {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .projects-header {
+        max-width: 100%;
+    }
+    .projects-header p {
+        padding-bottom: 50px;
+    }
+    .project-cards {
+        max-width: 100%;
+    }
+    .project-card {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .project-card img {
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+    }
+}
+
 .project-wrapper {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
 
 .project-desc {
     display: flex;
@@ -185,6 +273,13 @@ hr.solid-divider {
     gap: 24px;
 }
 
+@media (max-width: 480px) {
+    .project-links {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .project-links button {
     background-color: #0A0A0A;
     border: none;
@@ -210,15 +305,27 @@ hr.solid-divider {
     padding-top: 122px;
 } 
 
+@media (max-width: 480px) {
+    .about-me {
+        flex-direction: column;
+    }
+}
+
 .about-me-header h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 101px;
     font-weight: normal;
 }
 
+@media (max-width: 480px) {
+    .about-me-header h1 {
+        white-space: pre;
+    }
+}
+
 .about-me-content {
-    max-width: 700px;
-    max-height: 360px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .about-me-content h3 {
@@ -226,6 +333,12 @@ hr.solid-divider {
     font-size: 32px;
     padding-bottom: 16px;
     font-weight: normal;
+}
+
+@media (max-width: 480px) {
+   .about-me-content h3 {
+     max-width: 100%;
+   }
 }
 
 .about-me-content p {
@@ -371,4 +484,10 @@ textarea {
     color: #C7C7C7;
     padding-left: 100px;
     padding-top: 50px;
+}
+
+@media (max-width: 480px) {
+    .footer-container p {
+        padding-left: 85px;
+    }
 }
