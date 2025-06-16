@@ -1,0 +1,623 @@
+@use 'theme' as *;
+@use 'mixins';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Manrope:wght@200..800&display=swap');
+
+$desktop-width: 1024px;
+$mobile-width: 480px;
+
+/*
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+    min-height: 0;
+}
+    */
+
+.navbar {
+    @include mixins.flex-row;
+    padding: 30px 60px;
+
+    @media(max-width: $mobile-width) {
+        padding: 30px 30px;
+        max-width: 100%;
+    }
+
+    .logo-text {
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: $light-gray;
+            font-weight: normal;
+        }
+    }
+
+    .nav-list {
+        @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 32px);
+        list-style: none;
+
+        @media (max-width: $mobile-width) {
+            display: none;
+            justify-content: space-between;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: $light-gray;
+        }
+    }
+
+    .burger-icon {
+        display: none;
+
+        @media (max-width: $mobile-width) {
+            display: block;
+            margin: 0;
+        }
+    }
+}
+
+/* Main Content */
+.main-container {
+    @include mixins.flex-column($justify-content: none);
+
+    @media (max-width: $desktop-width) {
+        padding: 16px;
+        gap: 48px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        @include mixins.flex-row($justify-content: space-around, $gap: 80px);
+
+        @media (max-width: $desktop-width) {
+            flex-direction: column;
+            max-width: 100%;
+            gap: 150px;
+        }
+
+        .hero-content {
+            max-width: 544px;
+            max-height: 360px;
+            width: auto;
+            height: auto;
+
+            @media (max-width: $mobile-width) {
+                padding-left: 10px;
+            }
+
+            h1 {
+                font-family: 'Bebas Neue', sans-serif;
+                font-size: 101px;
+                padding-bottom: 8px;
+                font-weight: normal;
+
+                @media (max-width: $mobile-width) {
+                    font-size: 50px;
+                }
+            }
+            
+            p {
+                font-family: 'Manrope', sans-serif;
+                font-size: 18px;
+                color: $light-gray;
+                padding-bottom: 40px;
+            }
+
+            .hero-buttons {
+                @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 16px);
+
+                .contact-button {
+                    background-color: $boy-blue;
+                    color: $black-color;
+                    width: 187px;
+                    height: 54px;
+                    border: none;
+                    border-radius: 32px;
+                    font-family: 'Manrope', sans-serif;
+                    font-size: 16px;
+                    font-weight: 550;
+                 }
+
+                 .linkedin-button {
+                    background-color: $light-black-slighter;
+                    border: none;
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 64px;
+                }
+
+                .github-button {
+                    background-color: $light-black-slighter;
+                    border: none;
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 64px;
+                }
+            }
+        }
+        .hero-image {
+            @media (max-width: $desktop-width) {
+                padding: 0;
+                max-width: 100%;
+            }
+
+            img {
+                max-width: 600px;
+                max-height: 663px;
+                width: auto;
+                height: auto;
+
+                @media (max-width: $desktop-width) {
+                    max-width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+        }
+        
+    }
+
+    /* Projects Section */
+
+.projects {
+    
+    .projects-header {
+        max-width: 100%;
+        max-height: 100%;
+        align-self: flex-start;
+    
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 76px;
+            padding-bottom: 8px;
+            font-weight: normal;
+        }
+    
+        p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: $light-gray;
+            padding-bottom: 50px;
+
+            @media (max-width: $desktop-width) {
+                padding-bottom: 50px;
+            }
+        }
+
+        @media (max-width: $desktop-width) {
+            max-width: 100%;
+        }
+    }
+
+    .project-cards {
+        @include mixins.flex-column($justify-content: none, $gap: 120px);
+
+        @media (max-width: $desktop-width) {
+            max-width: 100%;
+        }
+
+        .project-card {
+            @include mixins.flex-row($justify-content: none, $align-items: start, $gap: 48px);
+
+            @media (max-width: $desktop-width) {
+                flex-direction: column;
+                max-width: 100%;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    padding: 0;
+                }
+            }
+
+            .project-wrapper {
+                @include mixins.flex-column($justify-content: none, $align-items: none, $gap: 16px);
+    
+                .project-desc {
+                    @include mixins.flex-column($justify-content: none, $align-items: none, $gap: 16px);
+                    padding-bottom: 32px;
+
+                    h3 {
+                        font-family: 'Manrope', sans-serif;
+                        font-size: 32px;
+                        font-weight: normal;
+                    }
+
+                    p {
+                        font-family: 'Manrope', sans-serif;
+                        font-size: 18px;
+                        color: $light-gray;
+                    }
+                }
+                .project-info {
+                    padding-bottom: 48px;
+
+                    h5 {
+                        font-family: 'Manrope', sans-serif;
+                        font-size: 16px;
+                    }
+
+                    p {
+                        font-family: 'Manrope', sans-serif;
+                        font-size: 16px;
+                        color: $light-gray;
+                    }
+
+                    hr.solid-divider {
+                        border: none;
+                        height: 0.5px;
+                        background-color: $dark-grey;
+                    }
+                }
+
+                .project-links {
+                    @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 24px);
+
+                    @media (max-width: $mobile-width) {
+                        @include mixins.flex-row($justify-content: center, $align-items: center, $gap: 24px);
+                    }
+
+                    button {
+                        background-color: $black-color;
+                        border: none;
+                        @include mixins.flex-row($justify-content: none, $gap: 4px);
+                        padding: 0;
+                        border-bottom: 2px solid $boy-blue;
+                        padding-bottom: 4px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $boy-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $desktop-width) {
+        @include mixins.flex-column($justify-content: none, $align-items: none);
+        max-width: 100%;
+    }
+
+}  
+
+/* About me Section */
+
+.about-me {
+    @include mixins.flex-column($align-items: none, $gap: 80px);
+    padding: 0 60px;
+    padding-top: 122px;
+    padding-bottom: 300px;
+
+    @media (max-width: $mobile-width) {
+        padding: 0 20px;
+        padding-top: 60px;
+        padding-bottom: 150px;
+    }
+
+    .about-me-header {
+        flex: 0 0 25%;
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 101px;
+            font-weight: normal;
+
+            @media (max-width: $mobile-width) {
+                white-space: normal;
+            }
+        }
+    }
+
+    .about-me-content {
+        flex: 1 1 70%;
+        max-width: 100%;
+        max-height: 100%;
+
+        h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 32px;
+            padding-bottom: 16px;
+            font-weight: normal;
+
+            @media (max-width: $mobile-width) {
+                max-width: 100%;
+            }
+        }
+
+        p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: $light-gray;
+            padding-bottom: 53px;
+        }
+
+        .about-me-buttons {
+            @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 16px);
+
+            .resume-button {
+                background-color: $boy-blue;
+                color: $black-color;
+                width: 187px;
+                height: 54px;
+                border: none;
+                border-radius: 32px;
+                font-family: 'Manrope', sans-serif;
+                font-size: 16px;
+                font-weight: 550;
+            }
+
+            .linkedin-button {
+                background-color: $light-black-slighter;
+                border: none;
+                width: 54px;
+                height: 54px;
+                border-radius: 64px;
+            }
+
+            .github-button {
+                background-color: $light-black-slighter;
+                border: none;
+                width: 54px;
+                height: 54px;
+                border-radius: 64px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $boy-blue;
+        }
+    }
+    
+}
+
+/* Capabilities Section */
+
+.capabilities-section {
+    @include mixins.flex-row($justify-content: space-around, $align-items: start);
+
+    @media (max-width: $desktop-width) {
+        @include mixins.flex-column($justify-content: center);
+        max-width: 100%;
+    }
+
+    .capabilities-header {
+        flex: 0 0 40%;
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 90px;
+            font-weight: normal;
+        }
+    }
+
+    .capabilities-content {
+        @include mixins.flex-column($justify-content: none, $align-items: none);
+        flex: 0 0 40%;
+        max-width: 100%;
+
+        h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 24px;
+            padding-bottom: 16px;
+            font-weight: normal;
+        }
+
+        p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: $light-gray;
+        }
+
+        .capabilities {
+            ul {
+                list-style-type: none;
+                @include mixins.flex-row($justify-content: none, $align-items: start, $gap: 16px);
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            li {
+                font-family: 'Manrope', sans-serif;
+                font-size: 16px;
+                color: $white-color;
+                outline: 1px solid gray;
+                border-radius: 50px;
+                text-align: center;
+                padding: 20px 40px;
+            }
+        }
+    }
+}
+}
+
+
+
+/* Contact Section */
+
+.contact {
+    @include mixins.flex-row($align-items: none, $gap: 24px);
+
+    @media (max-width: $desktop-width) {
+        flex-direction: column;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .contact-header {
+        padding-right: 100px;
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 76px;
+            font-weight: normal;
+            padding-bottom: 16px;
+        }
+
+        p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: $light-gray;
+            padding-bottom: 8px;
+        }
+
+        @media (max-width: $mobile-width) {
+            padding: 0;
+            max-width: 100%;
+        }
+
+        .link {
+            text-decoration: none;
+            color: $white-color;
+            border-bottom: 2px solid $boy-blue;
+        }
+
+        .social-links {
+            @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 24px);
+            padding-top: 40px;
+
+            @media (max-width: $desktop-width) {
+                justify-content: center;
+            }
+        }
+        
+    }
+
+    .contact-form {
+        @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 24px);
+        text-align: start;
+        padding-left: 100px;
+
+        @media (max-width: $desktop-width) {
+            padding: 0;
+            max-width: 100%;
+        }
+
+        form {
+            display: inline-block;
+            padding: 1em;
+
+            @media (max-width: $mobile-width) {
+                padding: 0;
+                display: block;
+                max-width: 100%;
+            }
+
+            p {
+                margin-top: 1em;
+
+                @media (max-width: $mobile-width) {
+                    margin: 0;
+                    max-width: 100%;
+                }
+
+                label {
+                    display: block;
+                    margin-bottom: 0.5em;
+                    text-align: left;
+                    font-family: 'Manrope', sans-serif;
+                    font-size: 16px;
+                    color: $light-gray;
+
+                    @media (max-width: $mobile-width) {
+                        max-width: 100%;
+                    }
+                }
+
+                input, textarea {
+                    font: 1em sans-serif;
+                    width: 600px;
+                    height: 50px;
+                    box-sizing: border-box;
+                    border: 1px solid $light-black;
+                    background-color: $light-black;
+                    padding: 0.5em;
+                    color: $light-gray;
+                    font-family: 'Manrope', sans-serif;
+
+                    :focus {
+                        outline-style: solid;
+                        outline-color: #000;
+                    }
+
+                    @media (max-width: $mobile-width) {
+                        max-width: 100%;
+                    }
+                }
+
+                textarea {
+                    vertical-align: top;
+                    height: 190px;
+
+                    @media (max-width: $mobile-width) {
+                        max-width: 100%;
+                    }
+                }
+            } 
+            
+            .button {
+                padding-left: 0;
+                margin-left: 0;
+                padding-top: 40px;
+
+                @media (max-width: $mobile-width) {
+                    max-width: 100%;
+                }
+
+                .submit {
+                    background-color: $boy-blue;
+                    color: $black-color;
+                    width: 140px;
+                    height: 54px;
+                    border: none;
+                    border-radius: 32px;
+                    font-family: 'Manrope', sans-serif;
+                    font-size: 16px;
+                    font-weight: 550;
+                }
+            }
+        }
+        
+    }
+}
+
+/* Footer Section */
+
+footer {
+    @include mixins.flex-row($align-items: none);
+    padding: 60px 100px;
+
+    
+    @media (max-width: $mobile-width) {
+        margin-top: 0px;
+    }
+
+    .footer-container {
+        p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            color: $light-gray;
+            padding-left: 0px;
+            padding-top: 0px;
+            max-width: 100%;
+        }
+    }
+}
