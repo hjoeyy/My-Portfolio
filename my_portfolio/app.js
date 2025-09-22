@@ -26,3 +26,19 @@ if(resumeButton) {
         window.location.href = 'assets/Joseph_Hermansen_Resume_Updated_2025.pdf';
     });
 }
+
+const burgerIcon = document.querySelector('.burger-icon');
+const offScreenMenu = document.querySelector('.off-screen-menu');
+const closeMenu = document.querySelector('.close-menu');
+
+if(burgerIcon) {
+    burgerIcon.addEventListener('click', () => {
+        offScreenMenu.classList.add('active');
+    });
+}
+
+if(closeMenu) {
+    closeMenu.addEventListener('click', () => {
+        offScreenMenu.classList.remove('active');
+    });
+}

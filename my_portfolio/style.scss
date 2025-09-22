@@ -8,12 +8,12 @@
 $desktop-width: 1024px;
 $mobile-width: 480px;
 
-/*
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+
+// html, body {
+//     height: 100%;
+//     margin: 0;
+//     padding: 0;
+// }
 
 body {
     min-height: 100vh;
@@ -24,7 +24,7 @@ main {
     flex: 1;
     min-height: 0;
 }
-    */
+
 
 .navbar {
     @include mixins.flex-row;
@@ -41,6 +41,10 @@ main {
             font-size: 32px;
             color: $light-gray;
             font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: $light-gray;
         }
     }
 
@@ -61,7 +65,7 @@ main {
         }
     }
 
-    .burger-icon {
+    .off-screen-menu {
         display: none;
 
         @media (max-width: $mobile-width) {
@@ -69,11 +73,82 @@ main {
             margin: 0;
         }
     }
+
+    .burger-icon {
+        display: none;
+
+        @media (max-width: $mobile-width) {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .off-screen-menu {
+        display: none;
+
+        @media (max-width: $mobile-width) {
+            list-style: none;
+            height: 100vh;
+            width: 100%;
+            max-width: 450px;
+            position: fixed;
+            top: 0;
+            right: -450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 3rem;
+            transition: .3s ease;
+            margin: 0;
+            background-color: $black-color;
+            z-index: 1000;
+
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                color: $light-gray;
+                font-size: 30px;
+                cursor: pointer;
+                padding: 10px;
+                transition: color 0.3s ease;
+                
+                &:hover {
+                    color: $boy-blue;
+                }
+            }
+
+            li {
+                margin: 20px 0;
+                
+                a {
+                    color: $light-gray;
+                    text-decoration: none;
+                    font-family: 'Manrope', sans-serif;
+                    font-size: 24px;
+                    transition: color 0.3s ease;
+                    
+                    &:hover {
+                        color: $boy-blue;
+                    }
+                }
+            }
+        }
+        
+        &.active {
+            right: 0;
+        }
+    }
 }
 
 /* Main Content */
 .main-container {
-    @include mixins.flex-column($justify-content: none);
+    @include mixins.flex-column($justify-content: none, $align-items: center);
+    flex: 1;
 
     @media (max-width: $desktop-width) {
         padding: 16px;
@@ -84,6 +159,8 @@ main {
 
     .hero {
         @include mixins.flex-row($justify-content: space-around, $gap: 80px);
+        align-items: center;
+        min-height: 80vh;
 
         @media (max-width: $desktop-width) {
             flex-direction: column;
@@ -92,8 +169,8 @@ main {
         }
 
         .hero-content {
-            max-width: 544px;
-            max-height: 360px;
+            max-width: 100%;
+            max-height: 100%;
             width: auto;
             height: auto;
 
@@ -121,6 +198,10 @@ main {
 
             .hero-buttons {
                 @include mixins.flex-row($justify-content: none, $align-items: none, $gap: 16px);
+
+                @media (max-width: $desktop-width) {
+                    @include mixins.flex-row($justify-content: center, $align-items: center, $gap: 16px);
+                }
 
                 .contact-button {
                     background-color: $boy-blue;
@@ -161,8 +242,8 @@ main {
             }
 
             img {
-                max-width: 600px;
-                max-height: 663px;
+                max-width: 1000px;
+                max-height: 700px;
                 width: auto;
                 height: auto;
 
@@ -179,17 +260,25 @@ main {
     /* Projects Section */
 
 .projects {
-    
+    @include mixins.flex-column($justify-content: none, $align-items: center);
+    gap: 80px;
+    min-height: 100vh;
+    align-items: center;
+
+    @media (max-width: $desktop-width) {
+        max-width: 100%;
+    }
+
     .projects-header {
         max-width: 100%;
         max-height: 100%;
-        align-self: flex-start;
     
         h1 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 76px;
             padding-bottom: 8px;
             font-weight: normal;
+            text-align: center;
         }
     
         p {
@@ -209,14 +298,16 @@ main {
     }
 
     .project-cards {
-        @include mixins.flex-column($justify-content: none, $gap: 120px);
+        @include mixins.flex-column($justify-content: center, $gap: 120px, $align-items: center);
 
         @media (max-width: $desktop-width) {
             max-width: 100%;
         }
 
         .project-card {
-            @include mixins.flex-row($justify-content: none, $align-items: start, $gap: 48px);
+            @include mixins.flex-row($justify-content: center, $align-items: start, $gap: 48px);
+            max-width: 1200px;
+            width: 100%;
 
             @media (max-width: $desktop-width) {
                 flex-direction: column;
@@ -295,7 +386,7 @@ main {
     }
 
     @media (max-width: $desktop-width) {
-        @include mixins.flex-column($justify-content: none, $align-items: none);
+        @include mixins.flex-column($justify-content: center, $align-items: center);
         max-width: 100%;
     }
 
@@ -305,7 +396,7 @@ main {
 
 .about-me {
     @include mixins.flex-column($align-items: none, $gap: 80px);
-    padding: 0 60px;
+    padding: 0 350px;
     padding-top: 122px;
     padding-bottom: 300px;
 
@@ -460,16 +551,22 @@ main {
 /* Contact Section */
 
 .contact {
-    @include mixins.flex-row($align-items: none, $gap: 24px);
+    @include mixins.flex-row($justify-content: center, $align-items: center, $gap: 24px);
+    min-height: 80vh;
+    align-items: start;
+    padding: 350px;
+    padding-bottom: 0px;
 
     @media (max-width: $desktop-width) {
         flex-direction: column;
         max-width: 100%;
         text-align: center;
+        padding: 0;
     }
 
     .contact-header {
         padding-right: 100px;
+        align-self: center;
 
         h1 {
             font-family: 'Bebas Neue', sans-serif;
