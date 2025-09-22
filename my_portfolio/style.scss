@@ -566,7 +566,11 @@ main {
 
     .contact-header {
         padding-right: 100px;
-        align-self: center;
+        align-self: start;
+
+        @media (max-width: $desktop-width) {
+            align-self: center;
+        }
 
         h1 {
             font-family: 'Bebas Neue', sans-serif;

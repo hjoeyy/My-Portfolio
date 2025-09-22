@@ -595,7 +595,12 @@ main {
 }
 .contact .contact-header {
   padding-right: 100px;
-  align-self: center;
+  align-self: start;
+}
+@media (max-width: 1024px) {
+  .contact .contact-header {
+    align-self: center;
+  }
 }
 .contact .contact-header h1 {
   font-family: "Bebas Neue", sans-serif;
